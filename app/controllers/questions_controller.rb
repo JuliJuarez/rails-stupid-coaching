@@ -3,5 +3,6 @@ class QuestionsController < ApplicationController
   end
 
   def answer
+    @answer = params[:question]
   end
 end

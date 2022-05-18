@@ -1,2 +1,18 @@
-<h1>Questions#answer</h1>
-<p>Find me in app/views/questions/answer.html.erb</p>
+ <div>
+  <h1>Stupid Coaching</h1>
+  <div>
+    <p>- You</p>
+    <p><%= @answer %></p>
+  </div>
+  <div>
+    <p>- Your coach</p>
+    <% if params[:question].downcase == "i am going to work right now!" %>
+      <p>Excellent</p>
+    <% elsif params[:question].end_with?("?") %>
+      <p>"Silly question, get dressed and go to work!"</p>
+    <% else %>
+      <p>"I don't care, get dressed and go to work!"</p>
+    <% end %>
+  </div>
+  <%= link_to "Ask a new question", root_path %>
+</div>
